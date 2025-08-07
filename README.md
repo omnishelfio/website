@@ -18,12 +18,18 @@ To use the JavaScript files in your Webflow site, add these script tags to your 
 <script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/js/global-components.js"></script>
 ```
 
+**For partners parallax scrolling:**
+```html
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/js/partners-parallax.js"></script>
+```
+
 ### 2. File Structure
 
 ```
 js/
 ├── landing-page.js        # Main landing page functionality
 ├── global-components.js   # Global reusable components
+├── partners-parallax.js   # Partners parallax scrolling
 └── (future files)         # Additional page-specific scripts
 ```
 
@@ -39,6 +45,9 @@ The JavaScript files include:
 **`global-components.js`:**
 - **Marquee Logo Track**: Auto-scrolling logo animation using GSAP (global)
 - **Embla Carousel**: Carousel functionality with navigation (global)
+
+**`partners-parallax.js`:**
+- **Partners Parallax**: Smooth parallax scrolling for partner sections (global)
 
 ### 4. Dependencies
 
