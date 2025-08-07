@@ -32,62 +32,71 @@ document.addEventListener("DOMContentLoaded", function () {
   const images = document.querySelectorAll(".step-image.desktop");
   const indicators = document.querySelectorAll(".indicator-dot");
 
-  function activate(idx) {
-    steps.forEach((el, i) => el.classList.toggle("active", i === idx));
-    images.forEach((img, i) => img.classList.toggle("active", i === idx));
-    indicators.forEach((dot, i) => dot.classList.toggle("active", i === idx));
+  // Only run if we have steps elements
+  if (steps.length > 0) {
+    function activate(idx) {
+      steps.forEach((el, i) => el.classList.toggle("active", i === idx));
+      images.forEach((img, i) => img.classList.toggle("active", i === idx));
+      indicators.forEach((dot, i) => dot.classList.toggle("active", i === idx));
+    }
+
+    activate(0); // Default step
+
+    const isMobile = window.innerWidth <= 991;
+
+    if (!isMobile) {
+      steps.forEach((step, i) => {
+        ScrollTrigger.create({
+          trigger: step,
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => activate(i),
+          onEnterBack: () => activate(i),
+        });
+      });
+
+      const stepsWrapper = document.querySelector(".steps-column");
+      const stepsContainer = document.querySelector(".steps-container");
+
+      // Only run if both elements exist
+      if (stepsWrapper && stepsContainer) {
+        window.addEventListener("load", () => {
+          const scrollAmount = stepsContainer.scrollWidth - stepsContainer.clientWidth;
+
+          stepsWrapper.style.height = `${stepsContainer.scrollWidth}px`;
+
+          gsap.to(stepsContainer, {
+            x: () => `-${scrollAmount}`,
+            ease: "none",
+            scrollTrigger: {
+              trigger: stepsWrapper,
+              start: "top top",
+              end: () => `+=${scrollAmount}`,
+              scrub: true,
+              pin: true,
+              anticipatePin: 1,
+            },
+          });
+        });
+      }
+    }
   }
 
-  activate(0); // Default step
-
-  const isMobile = window.innerWidth <= 991;
-
-  if (!isMobile) {
-    steps.forEach((step, i) => {
-      ScrollTrigger.create({
-        trigger: step,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => activate(i),
-        onEnterBack: () => activate(i),
-      });
-    });
-
-    const stepsWrapper = document.querySelector(".steps-column");
-    const stepsContainer = document.querySelector(".steps-container");
-
-    window.addEventListener("load", () => {
-      const scrollAmount = stepsContainer.scrollWidth - stepsContainer.clientWidth;
-
-      stepsWrapper.style.height = `${stepsContainer.scrollWidth}px`;
-
-      gsap.to(stepsContainer, {
-        x: () => `-${scrollAmount}`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: stepsWrapper,
-          start: "top top",
-          end: () => `+=${scrollAmount}`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-        },
+  // Only add click handlers if indicators exist
+  if (indicators.length > 0) {
+    indicators.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = +dot.dataset.step - 1;
+        gsap.to(window, {
+          duration: 0.6,
+          scrollTo: {
+            y: `#step-${idx + 1}`,
+            offsetY: window.innerHeight / 2,
+          },
+        });
       });
     });
   }
-
-  indicators.forEach((dot) => {
-    dot.addEventListener("click", () => {
-      const idx = +dot.dataset.step - 1;
-      gsap.to(window, {
-        duration: 0.6,
-        scrollTo: {
-          y: `#step-${idx + 1}`,
-          offsetY: window.innerHeight / 2,
-        },
-      });
-    });
-  });
 
   // ──────────────────────────────────────────────────────────────
   // Card Toggle Functionality
