@@ -70,6 +70,5 @@ logs
 tmp/
 temp/
 
-# Build output
-dist/
+# Dependencies
 node_modules/
