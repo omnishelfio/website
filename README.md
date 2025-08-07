@@ -10,15 +10,13 @@ To use the JavaScript files in your Webflow site, add these script tags to your 
 
 **For landing page functionality:**
 ```html
-<script src="https://cdn.jsdelivr.net/gh/YOUR_USERNAME/website@main/js/landing-page.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/js/landing-page.js"></script>
 ```
 
 **For global components (marquee logos and carousels):**
 ```html
-<script src="https://cdn.jsdelivr.net/gh/YOUR_USERNAME/website@main/js/global-components.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/js/global-components.js"></script>
 ```
-
-**Replace `YOUR_USERNAME` with your actual GitHub username.**
 
 ### 2. File Structure
 
@@ -97,7 +95,7 @@ To add JavaScript for other pages:
 
 ## Getting Started
 
-1. Replace `YOUR_USERNAME` in the script tags with your GitHub username
+1. The script tags are ready to use with your GitHub username (omnishelfio)
 2. Add the script tags to your Webflow pages
 3. Ensure all dependencies are loaded
 4. Test functionality on your live site
