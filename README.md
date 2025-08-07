@@ -1,70 +1,10 @@
-# Website JavaScript Files
+# OmniShelf Website JavaScript & CSS Files
 
-This repository contains JavaScript files for your Webflow website. The files are served via jsDelivr CDN to keep your Webflow footer clean and make code management easier.
+This repository contains JavaScript and CSS files for your Webflow website. Files are served via jsDelivr CDN to keep your Webflow footer clean and make code management easier.
 
-## How to Use
+---
 
-### 1. Script Usage
-
-To use the JavaScript files in your Webflow site, add these script tags to your page's custom code section:
-
-#### **Development (Latest Changes)**
-Use these URLs for immediate updates (cache busted):
-
-**For landing page functionality:**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/landing-page.js"></script>
-```
-
-**For global components (marquee logos and carousels):**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/global-components.js"></script>
-```
-
-**For partners parallax scrolling:**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/partners-parallax.js"></script>
-```
-
-**For blog table of contents and read time:**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/blog-toc.js"></script>
-```
-
-**For landing page styles:**
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/css/landing-page.css">
-```
-
-#### **Production (Minified - Recommended)**
-Use these URLs for better performance:
-
-**For landing page functionality:**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/js/landing-page.min.js"></script>
-```
-
-**For global components:**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/js/global-components.min.js"></script>
-```
-
-**For partners parallax scrolling:**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/js/partners-parallax.min.js"></script>
-```
-
-**For blog table of contents:**
-```html
-<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/js/blog-toc.min.js"></script>
-```
-
-**For landing page styles:**
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/css/landing-page.min.css">
-```
-
-### 2. File Structure
+## 📁 File Structure
 
 ```
 js/
@@ -88,30 +28,12 @@ dist/                     # Minified production files
     └── blog-toc.min.js
 ```
 
-### 3. Features Included
+---
 
-The JavaScript files include:
+## 🚀 Quick Start
 
-**`landing-page.js`:**
-- **Video Player Controls**: Play/pause functionality for Video.js player
-- **Step-based ScrollTrigger**: Interactive step navigation with scroll animations
-- **Card Toggle Functionality**: Toggle between "with" and "without" card states
-
-**`global-components.js`:**
-- **Marquee Logo Track**: Auto-scrolling logo animation using GSAP (global)
-- **Embla Carousel**: Carousel functionality with navigation (global)
-
-**`partners-parallax.js`:**
-- **Partners Parallax**: Smooth parallax scrolling for partner sections (global)
-
-**`blog-toc.js`:**
-- **Read Time Calculation**: Automatically calculates and displays reading time
-- **Table of Contents**: Generates TOC from H2 headings with smooth navigation
-- **Scroll Sync**: Highlights current section as user scrolls
-
-### 4. Dependencies
-
-Make sure these libraries are loaded before the landing page script:
+### 1. Dependencies
+Add these libraries to your Webflow page before your custom scripts:
 
 ```html
 <!-- GSAP -->
@@ -127,45 +49,81 @@ Make sure these libraries are loaded before the landing page script:
 <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
 ```
 
-### 5. Development Workflow
+### 2. Script Tags
+Add these to your Webflow page's custom code section:
 
-1. **Edit files locally** in the `js/` directory
-2. **Commit and push** to GitHub:
-   ```bash
-   git add .
-   git commit -m "Update landing page functionality"
-   git push origin main
-   ```
-3. **jsDelivr automatically serves** the latest version from your main branch
+#### **Development (Latest Changes)**
+Use these URLs for immediate updates (cache busted):
 
-### 6. Minification & Build Process
+```html
+<!-- Landing page functionality -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/landing-page.js"></script>
 
-For production, you can minify your files to reduce file sizes:
+<!-- Global components (marquee logos and carousels) -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/global-components.js"></script>
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+<!-- Partners parallax scrolling -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/partners-parallax.js"></script>
 
-2. **Build minified files:**
-   ```bash
-   npm run build
-   ```
+<!-- Blog table of contents and read time -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/blog-toc.js"></script>
 
-3. **Use minified versions in production:**
-   ```html
-   <!-- Minified versions -->
-   <script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/js/landing-page.min.js"></script>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/css/landing-page.min.css">
-   ```
+<!-- Landing page styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/css/landing-page.css">
+```
 
-**Build Scripts:**
-- `npm run build` - Build all minified files
-- `npm run build:css` - Build minified CSS only
-- `npm run build:js` - Build minified JS only
-- `npm run clean` - Remove dist folder
+#### **Production (Minified - Recommended)**
+Use these URLs for better performance:
 
-**File Size Comparison:**
+```html
+<!-- Landing page functionality -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/dist/js/landing-page.min.js"></script>
+
+<!-- Global components -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/dist/js/global-components.min.js"></script>
+
+<!-- Partners parallax scrolling -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/dist/js/partners-parallax.min.js"></script>
+
+<!-- Blog table of contents -->
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/dist/js/blog-toc.min.js"></script>
+
+<!-- Landing page styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/dist/css/landing-page.min.css">
+```
+
+---
+
+## 📋 Features Included
+
+### **`landing-page.js`**
+- **Video Player Controls**: Play/pause functionality for Video.js player
+- **Step-based ScrollTrigger**: Interactive step navigation with scroll animations
+- **Card Toggle Functionality**: Toggle between "with" and "without" card states
+
+### **`global-components.js`**
+- **Marquee Logo Track**: Auto-scrolling logo animation using GSAP (global)
+- **Embla Carousel**: Carousel functionality with navigation (global)
+
+### **`partners-parallax.js`**
+- **Partners Parallax**: Smooth parallax scrolling for partner sections (global)
+
+### **`blog-toc.js`**
+- **Read Time Calculation**: Automatically calculates and displays reading time
+- **Table of Contents**: Generates TOC from H2 headings with smooth navigation
+- **Scroll Sync**: Highlights current section as user scrolls
+
+### **`landing-page.css`**
+- **Vertical Steps Styling**: Complete styling for step-based navigation
+- **Video.js OmniShelf Theme**: Custom blue theme for video player
+- **Mobile Responsive**: Optimized for all screen sizes
+- **Smooth Animations**: Professional transitions and effects
+
+---
+
+## ⚡ Performance Optimization
+
+### File Size Comparison
 | File | Original | Minified | Reduction |
 |------|----------|----------|-----------|
 | landing-page.js | ~4.5KB | ~3.7KB | 18% |
@@ -174,11 +132,32 @@ For production, you can minify your files to reduce file sizes:
 | blog-toc.js | ~2.1KB | ~1.0KB | 52% |
 | landing-page.css | ~2.1KB | ~1.2KB | 43% |
 
-### 7. Cache Busting & Updates
+### Build Process
+```bash
+# Install dependencies
+npm install
 
-**Problem**: jsDelivr aggressively caches `@main` branch files, so updates might not appear immediately.
+# Build minified files
+npm run build
 
-**Solutions**:
+# Clean build files
+npm run clean
+```
+
+**Build Scripts:**
+- `npm run build` - Build all minified files
+- `npm run build:css` - Build minified CSS only
+- `npm run build:js` - Build minified JS only
+- `npm run clean` - Remove dist folder
+
+---
+
+## 🔄 Cache Busting & Updates
+
+### The Problem
+jsDelivr aggressively caches `@main` branch files, so updates might not appear immediately.
+
+### Solutions
 
 1. **Use commit hashes** (current approach):
    ```html
@@ -198,17 +177,39 @@ For production, you can minify your files to reduce file sizes:
 
 4. **Use minified files** (better caching):
    ```html
-   <script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/dist/js/landing-page.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/dist/js/landing-page.min.js"></script>
    ```
 
-### 8. Version Control
+---
 
-- Use semantic commit messages
-- Test changes locally before pushing
-- Consider using branches for major features
-- Tag releases for stable versions
+## 🛠️ Development Workflow
 
-### 9. Adding New Pages
+### 1. Make Changes
+Edit files in the `js/` and `css/` directories
+
+### 2. Build Minified Files
+```bash
+npm run build
+```
+
+### 3. Commit and Push
+```bash
+git add .
+git commit -m "Update landing page functionality"
+git push origin main
+```
+
+### 4. Get Latest URLs
+```bash
+./cache-bust.sh
+```
+
+### 5. Update Webflow
+Copy the new URLs to your Webflow custom code
+
+---
+
+## 📝 Adding New Pages
 
 To add JavaScript for other pages:
 
@@ -218,25 +219,22 @@ To add JavaScript for other pages:
    <script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@9ef757d/js/about-page.js"></script>
    ```
 
-### 10. Benefits
+---
 
-- ✅ Clean Webflow footer
-- ✅ Version control for your JavaScript
-- ✅ Fast CDN delivery via jsDelivr
-- ✅ Easy maintenance and updates
-- ✅ Automatic caching and optimization
-- ✅ Minified files for production
-- ✅ Cache busting solutions
-- ✅ Build automation
+## ✅ Benefits
 
-## Getting Started
+- ✅ **Clean Webflow footer** - No bulky JavaScript in custom code
+- ✅ **Version control** - Track all your JavaScript changes
+- ✅ **Fast CDN delivery** - jsDelivr serves files globally
+- ✅ **Easy maintenance** - Simple updates and rollbacks
+- ✅ **Automatic caching** - Optimized performance
+- ✅ **Minified files** - Production-ready optimization
+- ✅ **Cache busting** - Immediate update solutions
+- ✅ **Build automation** - Streamlined workflow
 
-1. **Copy the script tags** from the sections above (use the cache-busted URLs)
-2. **Add the script tags** to your Webflow pages
-3. **Ensure all dependencies** are loaded
-4. **Test functionality** on your live site
+---
 
-## Quick Start Commands
+## 🚀 Quick Commands
 
 ```bash
 # Get latest cache-busted URLs
@@ -247,12 +245,19 @@ npm run build
 
 # Clean build files
 npm run clean
+
+# Check git status
+git status
 ```
 
-## Support
+---
+
+## 📞 Support
 
 If you need to make changes:
 1. Edit the files in this repository
 2. Commit and push to GitHub
 3. Run `./cache-bust.sh` to get the latest URLs
 4. Update your Webflow custom code with the new URLs
+
+For cache issues, use the commit hash URLs instead of `@main` for immediate updates.
