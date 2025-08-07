@@ -1,0 +1,116 @@
+/* Landing Page Styles */
+/* This file contains all the custom styles for the landing page */
+
+/* ───────────────────────────────────────────────────────────────
+   Vertical Steps Column & Scroll Trigger Setup
+   ─────────────────────────────────────────────────────────────── */
+.steps-column {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.progress-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #2a2a2a;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.step-item {
+  position: relative;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.step-item.active {
+  opacity: 1;
+}
+
+.step-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  transition: background-color 0.3s;
+}
+
+.step-item.active .step-indicator {
+  background: #52c7ef;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Sticky Image Column for Visual Steps
+   ─────────────────────────────────────────────────────────────── */
+.image-column {
+  position: sticky;
+  top: 4rem;
+  height: 600px;
+}
+
+.image-container {
+  position: relative;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.step-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.step-image.active {
+  opacity: 1;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Mobile Override: All Steps Always Visible
+   ─────────────────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .step-item {
+    opacity: 1 !important;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Video.js OmniShelf Blue Theme
+   ─────────────────────────────────────────────────────────────── */
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button {
+  background-color: #2F93ED !important;
+}
+
+.video-js .vjs-play-progress,
+.video-js .vjs-volume-level {
+  background-color: #2F93ED !important;
+}
+
+.video-js .vjs-slider {
+  background-color: rgba(47, 147, 237, 0.3) !important;
+}
+
+.video-js .vjs-big-play-button {
+  border: none !important;
+  border-radius: 50% !important;
+  width: 60px;
+  height: 60px;
+  font-size: 2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
