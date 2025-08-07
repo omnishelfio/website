@@ -23,6 +23,11 @@ To use the JavaScript files in your Webflow site, add these script tags to your 
 <script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/js/partners-parallax.js"></script>
 ```
 
+**For blog table of contents and read time:**
+```html
+<script src="https://cdn.jsdelivr.net/gh/omnishelfio/website@main/js/blog-toc.js"></script>
+```
+
 ### 2. File Structure
 
 ```
@@ -30,6 +35,7 @@ js/
 ├── landing-page.js        # Main landing page functionality
 ├── global-components.js   # Global reusable components
 ├── partners-parallax.js   # Partners parallax scrolling
+├── blog-toc.js           # Blog table of contents and read time
 └── (future files)         # Additional page-specific scripts
 ```
 
@@ -48,6 +54,11 @@ The JavaScript files include:
 
 **`partners-parallax.js`:**
 - **Partners Parallax**: Smooth parallax scrolling for partner sections (global)
+
+**`blog-toc.js`:**
+- **Read Time Calculation**: Automatically calculates and displays reading time
+- **Table of Contents**: Generates TOC from H2 headings with smooth navigation
+- **Scroll Sync**: Highlights current section as user scrolls
 
 ### 4. Dependencies
 
