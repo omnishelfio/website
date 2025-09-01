@@ -12,27 +12,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoWidth = logos.reduce((acc, logo) => acc + logo.offsetWidth + 80, 0);
     const viewportWidth = window.innerWidth;
 
-    let minTrackWidth = viewportWidth * 2;
-    let currentWidth = logoWidth;
-
-    while (currentWidth < minTrackWidth) {
+    // Clone logos to create seamless loop
+    // We need enough logos to fill the viewport plus one full set
+    const logosToClone = Math.ceil((viewportWidth + logoWidth) / logoWidth);
+    
+    for (let i = 0; i < logosToClone; i++) {
       logos.forEach(logo => {
         const clone = logo.cloneNode(true);
         track.appendChild(clone);
       });
-      currentWidth += logoWidth;
     }
 
+    // Create seamless infinite scroll
     const totalWidth = track.scrollWidth;
     const speed = 20;
+    const duration = totalWidth / speed;
 
-    gsap.to(track, {
-      x: `-=${totalWidth}`,
+    // Use a timeline for better control
+    const tl = gsap.timeline({ repeat: -1 });
+    
+    tl.to(track, {
+      x: -logoWidth,
       ease: "none",
-      duration: totalWidth / speed,
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
+      duration: duration,
+      onComplete: () => {
+        // Reset position seamlessly
+        gsap.set(track, { x: 0 });
       }
     });
   }
